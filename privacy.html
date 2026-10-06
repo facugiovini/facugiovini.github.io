@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FACU AI — Política de privacidad</title>
+<meta name="description" content="Política de privacidad de FACU AI: uso de datos de Google y del permiso gmail.send.">
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; max-width: 760px; margin: 0 auto; padding: 48px 20px; line-height: 1.6; }
+  h2 { margin-top: 1.8em; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid #8884; padding: 6px 10px; text-align: left; vertical-align: top; }
+  footer { margin-top: 3em; font-size: 0.9em; opacity: 0.8; }
+  a { color: #1f6feb; }
+</style>
+</head>
+<body>
+<main>
+  <p><a href="./">← FACU AI</a></p>
+  <h1>Política de privacidad de FACU AI</h1>
+  <p>Última actualización: 6 de octubre de 2026.</p>
+
+  <h2>1. Alcance</h2>
+  <p>FACU AI es un sistema personal y privado de un solo usuario, desarrollado y utilizado exclusivamente por su propietario
+    (Facundo). No ofrece cuentas a terceros. Esta política describe cómo FACU AI usa los datos que recibe de Google a través de
+    la conexión con Gmail.</p>
+
+  <h2>2. Permisos de Google que se solicitan</h2>
+  <table>
+    <tr><th>Permiso (scope)</th><th>Para qué se usa</th></tr>
+    <tr><td><code>https://www.googleapis.com/auth/gmail.send</code></td>
+      <td>Enviar, en nombre de la cuenta del propietario, los reportes que él autorizó, a la dirección que él configuró.</td></tr>
+    <tr><td><code>openid</code></td><td>Identificar la cuenta de Google que se conecta.</td></tr>
+    <tr><td><code>https://www.googleapis.com/auth/userinfo.email</code></td>
+      <td>Conocer la dirección de correo de la cuenta conectada, que se usa como remitente de los reportes.</td></tr>
+  </table>
+  <p><strong>FACU AI no solicita permisos para leer, buscar, clasificar ni modificar correos</strong> (por ejemplo, no solicita
+    <code>gmail.readonly</code>, <code>gmail.modify</code>, <code>gmail.metadata</code> ni <code>https://mail.google.com/</code>).
+    El sistema rechaza cualquier conexión que otorgue permisos distintos de los tres indicados.</p>
+
+  <h2>3. Qué datos de Google se almacenan</h2>
+  <ul>
+    <li><strong>Token de actualización (refresh token):</strong> se guarda cifrado en un almacén de secretos del servidor, con
+      acceso restringido al propio sistema. No se muestra, no se registra en logs y no se envía a terceros.</li>
+    <li><strong>Dirección de correo de la cuenta conectada</strong> y los permisos otorgados: se guardan como parte del registro
+      de la conexión.</li>
+    <li><strong>Registros técnicos de verificación</strong> de la conexión (fecha, resultado y permisos observados), sin tokens.</li>
+  </ul>
+  <p>Los tokens de acceso de corta duración se usan sólo en memoria durante el envío o la verificación y no se almacenan.
+    FACU AI no almacena el contenido de la bandeja de entrada porque no tiene acceso a ella. Los correos enviados quedan, como
+    cualquier correo enviado, en la carpeta de enviados de la propia cuenta de Gmail del propietario.</p>
+
+  <h2>4. Cómo se usan</h2>
+  <p>Los datos de Google se usan únicamente para enviar los reportes autorizados por el propietario y para verificar que la
+    conexión siga siendo válida. No se usan para ningún otro fin.</p>
+
+  <h2>5. No se venden ni se comparten</h2>
+  <p>FACU AI no vende, alquila ni comparte datos de Google con terceros, y no los usa para publicidad.</p>
+
+  <h2>6. No se usan para entrenar modelos de IA</h2>
+  <p>Los datos recibidos de las APIs de Google no se usan para desarrollar, mejorar ni entrenar modelos de inteligencia
+    artificial o aprendizaje automático, propios o de terceros.</p>
+
+  <h2>7. Cumplimiento de la política de datos de Google</h2>
+  <p>El uso y la transferencia de información recibida de las APIs de Google por parte de FACU AI cumplen la
+    <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+    incluidos los requisitos de uso limitado (Limited Use).</p>
+
+  <h2>8. Revocación y desconexión</h2>
+  <ul>
+    <li>El acceso puede revocarse en cualquier momento desde la cuenta de Google, en
+      <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+    <li>Cuando Google informa que el acceso fue revocado o vencido, FACU AI marca la conexión como revocada, elimina el token de
+      actualización y deja de intentar enviar reportes hasta que el propietario vuelva a autorizarla.</li>
+    <li>Cambiar la contraseña de la cuenta de Gmail también invalida el acceso y requiere una nueva autorización.</li>
+  </ul>
+
+  <h2>9. Seguridad</h2>
+  <p>El acceso a los datos está restringido al propio sistema mediante controles en el servidor. Las credenciales se guardan
+    cifradas y nunca se publican.</p>
+
+  <h2>10. Cambios</h2>
+  <p>Si esta política cambia, se actualizará esta página y su fecha de última actualización.</p>
+
+  <h2>11. Contacto</h2>
+  <p>Contacto público: <a href="https://github.com/facugiovini">GitHub @facugiovini</a>.</p>
+
+  <h2 lang="en">Summary in English</h2>
+  <p lang="en">FACU AI is a private, single-user personal system. It requests only <code>gmail.send</code>,
+    <code>openid</code> and <code>userinfo.email</code>, and uses them solely to send reports authorized by its owner. It does
+    not read, search or modify email. The refresh token is stored encrypted on the server; data is never sold, shared or used to
+    train AI models. FACU AI's use and transfer of information received from Google APIs adheres to the
+    <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+    including the Limited Use requirements. Access can be revoked at
+    <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. Contact:
+    <a href="https://github.com/facugiovini">GitHub @facugiovini</a>.</p>
+</main>
+<footer>
+  <p><a href="./">FACU AI</a> · Contacto: <a href="https://github.com/facugiovini">GitHub @facugiovini</a></p>
+</footer>
+</body>
+</html>
